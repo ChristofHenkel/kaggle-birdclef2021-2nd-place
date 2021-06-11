@@ -2,7 +2,7 @@ from default_config import basic_cfg
 import audiomentations as AA
 
 cfg = basic_cfg
-cfg.train_df = cfg.data_dir + "train_2020_v2.csv"
+cfg.train_df = cfg.data_dir + "train_meta_4folded_v1.csv"
 cfg.val_df = cfg.data_dir + "train_soundscape_labels_v2.csv"
 
 # dataset
@@ -41,13 +41,13 @@ cfg.top_db = None
 cfg.train_aug = AA.Compose(
     [
         AA.AddBackgroundNoise(
-            sounds_path="input/freesound/nocall", min_snr_in_db=0, max_snr_in_db=3, p=0.5
+            sounds_path="input/ff1010bird_nocall/nocall", min_snr_in_db=0, max_snr_in_db=3, p=0.5
         ),
         AA.AddBackgroundNoise(
             sounds_path="input/train_soundscapes/nocall", min_snr_in_db=0, max_snr_in_db=3, p=0.25
         ),
         AA.AddBackgroundNoise(
-            sounds_path="input/aicrowd/noise_30sec", min_snr_in_db=0, max_snr_in_db=3, p=0.25
+            sounds_path="input/aicrowd2020_noise_30sec/noise_30sec", min_snr_in_db=0, max_snr_in_db=3, p=0.25
         ),
     ]
 )

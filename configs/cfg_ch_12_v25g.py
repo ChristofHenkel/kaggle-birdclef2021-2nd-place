@@ -41,7 +41,7 @@ cfg.top_db = None
 cfg.train_aug = AA.Compose(
     [
         AA.AddShortNoises(
-            sounds_path="/raid/ff1010bird_nocall/nocall",
+            sounds_path="/input/ff1010bird_nocall/nocall",
             min_snr_in_db=0,
             max_snr_in_db=3,
             p=0.5,
@@ -50,14 +50,14 @@ cfg.train_aug = AA.Compose(
             max_time_between_sounds=16.0,
         ),
         AA.AddBackgroundNoise(
-            sounds_path="/raid/train_soundscapes/nocall",
+            sounds_path="/input/train_soundscapes/nocall",
             min_snr_in_db=0,
             max_snr_in_db=3,
             p=0.25,
             lru_cache_size=3,
         ),
         AA.AddBackgroundNoise(
-            sounds_path="/raid/aicrowd2020_noise_30sec/noise_30sec",
+            sounds_path="/input/aicrowd2020_noise_30sec/noise_30sec",
             min_snr_in_db=0,
             max_snr_in_db=3,
             p=0.25,
