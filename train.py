@@ -227,11 +227,7 @@ if __name__ == "__main__":
 
                 cfg.curr_step += cfg.batch_size
 
-                try:
-                    data = next(tr_it)
-                except Exception as e:
-                    print(e)
-                    print("DATA FETCH ERROR")
+                data = next(tr_it)
 
                 model.train()
                 torch.set_grad_enabled(True)
