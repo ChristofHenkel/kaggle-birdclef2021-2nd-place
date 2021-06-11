@@ -16,14 +16,6 @@ import os
 from transformers import get_cosine_schedule_with_warmup
 from torch.utils.data import SequentialSampler, DataLoader
 
-
-os.environ["OMP_NUM_THREADS"] = "1"
-os.environ["MKL_NUM_THREADS"] = "1"
-os.environ["OPENBLAS_NUM_THREADS"] = "1"
-os.environ["VECLIB_MAXIMUM_THREADS"] = "1"
-os.environ["NUMEXPR_NUM_THREADS"] = "1"
-os.environ["TOKENIZERS_PARALLELISM"] = "false"
-
 cv2.setNumThreads(0)
 
 sys.path.append("configs")
