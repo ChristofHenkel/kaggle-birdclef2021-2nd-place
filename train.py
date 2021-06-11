@@ -16,14 +16,6 @@ import os
 from transformers import get_cosine_schedule_with_warmup
 from torch.utils.data import SequentialSampler, DataLoader
 
-
-os.environ["OMP_NUM_THREADS"] = "1"
-os.environ["MKL_NUM_THREADS"] = "1"
-os.environ["OPENBLAS_NUM_THREADS"] = "1"
-os.environ["VECLIB_MAXIMUM_THREADS"] = "1"
-os.environ["NUMEXPR_NUM_THREADS"] = "1"
-os.environ["TOKENIZERS_PARALLELISM"] = "false"
-
 cv2.setNumThreads(0)
 
 sys.path.append("configs")
@@ -235,11 +227,7 @@ if __name__ == "__main__":
 
                 cfg.curr_step += cfg.batch_size
 
-                try:
-                    data = next(tr_it)
-                except Exception as e:
-                    print(e)
-                    print("DATA FETCH ERROR")
+                data = next(tr_it)
 
                 model.train()
                 torch.set_grad_enabled(True)
