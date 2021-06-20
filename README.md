@@ -21,4 +21,4 @@ After training, the last checkpoint (model weights) will be saved to the folder 
 
 
 ## Inference
-Inference is published in a kaggle kernel [here](https://www.kaggle.com/ilu000/2nd-place-birdclef2021?scriptVersionId=65346856). Weights from our trained models are provided in a kaggle dataset linked to the inference kernel [here](https://www.kaggle.com/ilu000/2ndplacebirdclef2021-models).
+Inference is published in a kaggle kernel [here](https://www.kaggle.com/ilu000/2nd-place-birdclef2021-inference/). Weights from our trained models are provided in a kaggle dataset linked to the inference kernel [here](https://www.kaggle.com/ilu000/2ndplacebirdclef2021-models).
